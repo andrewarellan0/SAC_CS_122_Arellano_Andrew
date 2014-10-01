@@ -1,1 +1,38 @@
+// Andrew Arellano
+// CS112
 
+import java.util.Scanner;
+
+public class Lab1 
+{
+	public static void main(String[] args)
+	{ 
+		Scanner input = new Scanner(System.in);
+	
+		int randomNumber;
+		randomNumber = 0 + (int) (Math.random()* 10 );
+		int answer = randomNumber;
+		int guess;
+		
+		
+		System.out.print("Try to guess the correct number 1 through 10. :");
+		
+		guess = input.nextInt();
+		
+		if (guess == answer)
+		{
+			System.out.println("Congratulations you guessed correctly!");
+		}
+		if (guess > answer)
+		{
+			System.out.println("The number is too big.");
+		}
+		if (guess < answer)
+		{
+			System.out.println("The number is too small.");
+		}
+		
+		input.close();
+	}
+	
+}
