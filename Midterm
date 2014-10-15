@@ -1,0 +1,69 @@
+// Andrew Arellano
+// CMPR 112
+// Midterm
+
+// 1. A java class is a blueprint.
+// 2. Declaring a variable makes it available for use.
+//  	Initializing it sets a value to that variable.
+
+import java.util.Scanner;
+
+public class Midterm 
+{
+	public static void main( String[] args)
+	{
+		Scanner input = new Scanner( System.in );
+		int userGuess;
+		int magicNumber;
+		int winCount = 0;
+		int lossCount = 0;
+		int replay = 0;
+		
+		do 
+		{
+			magicNumber = 0 + (int) ( Math.random() * 10 );
+			
+			System.out.print("Enter 1 to guess EVEN or Enter 0 to guess ODD: ");
+			userGuess = input.nextInt();
+			
+			// user guesses EVEN
+			if ( userGuess == 1 )
+			{
+				if( magicNumber % 2 == 0 )
+				{
+					System.out.print("The random number is EVEN! You guessed correctly!");
+					++winCount;
+				}
+				else 
+				{
+					System.out.print("The number is ODD! You guessed wrong!");
+					++lossCount;
+				}
+			}
+			// user guesses ODD
+			else if (userGuess == 0)
+			{
+				if( magicNumber % 2 == 0 )
+				{
+					System.out.print("The random number is EVEN! You guessed wrong!");
+					++lossCount;
+				}
+				else 
+				{
+					System.out.print("The number is ODD! You guessed correctly!");
+					++winCount;
+				}
+			
+			}
+		
+			System.out.print("Do you wish to continue playing? 1 = yes, 0 = no :");
+			replay = input.nextInt();
+		
+		}
+			while (replay == 1);
+		
+		System.out.printf( "You won %d times! ", winCount );
+		System.out.printf( "You lost %d times! ", lossCount );
+	}
+}
+
